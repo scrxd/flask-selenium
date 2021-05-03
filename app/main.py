@@ -80,7 +80,7 @@ def index():
         #return json.dumps(kaplar)
 
         elementKaplar = driver.find_element_by_class_name('notifications-block')
-        innerHtml = elementKaplar.get_attribute('innerHTML')
+        innerHtml = elementKaplar.get_attribute('outerHTML')
         return innerHtml
     finally:
         print("sfdsf")
