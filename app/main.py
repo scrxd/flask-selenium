@@ -78,9 +78,10 @@ def index():
         #return str(elements.__len__())
         #return "test test"
         #return json.dumps(kaplar)
-        
+
         eee = driver.find_element_by_class_name('notifications-block')
         rrr = eee.get_attribute('innerHTML')
         return rrr
     finally:
         print("sfdsf")
+        driver.quit()
