@@ -1,4 +1,4 @@
-from app.maink import app
+from app.mainy import app
 
 if __name__ == "__main__":
 	app.run()

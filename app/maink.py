@@ -20,45 +20,48 @@ def index():
         kaplar = []
         driver.get('https://www.kap.org.tr/tr/bildirim-sorgu?member=4028e4a1413b7ef401413bc2251e0047')
         time.sleep(1)
-        elements = driver.find_elements_by_class_name('w-clearfix.notifications-row')
 
-        for e in elements:
-            column = e.find_elements_by_class_name('notifications-column')
-            if column.__len__() == 11:
-                sayi = column[0].text
-                tarih = column[1].text
-                kod = column[2].text
-                sirket = column[3].text
-                tip = column[4].text
-                konu = column[5].text
-                ozet = column[6].text
-                ilgili = column[7].text
-                yil = column[8].text
-                periyot = column[9].text
+        # elements = driver.find_elements_by_class_name('w-clearfix.notifications-row')
+        #
+        # for e in elements:
+        #     column = e.find_elements_by_class_name('notifications-column')
+        #     if column.__len__() == 11:
+        #         sayi = column[0].text
+        #         tarih = column[1].text
+        #         kod = column[2].text
+        #         sirket = column[3].text
+        #         tip = column[4].text
+        #         konu = column[5].text
+        #         ozet = column[6].text
+        #         ilgili = column[7].text
+        #         yil = column[8].text
+        #         periyot = column[9].text
+        #
+        #         kap = {
+        #             'sayi': sayi,
+        #             'tarih': tarih,
+        #             'kod': kod,
+        #             'sirket': sirket,
+        #             'tip': tip,
+        #             'konu': konu,
+        #             'ozet': ozet,
+        #             'ilgili': ilgili,
+        #             'yil': yil,
+        #             'periyot': periyot
+        #         }
+        #
+        #         kaplar.append(kap)
+        #
+        # # json formatında dondurur
+        # response = app.response_class(
+        #     response=json.dumps(kaplar),
+        #     status=200,
+        #     mimetype='application/json'
+        # )
+        #return response
 
-                kap = {
-                    'sayi': sayi,
-                    'tarih': tarih,
-                    'kod': kod,
-                    'sirket': sirket,
-                    'tip': tip,
-                    'konu': konu,
-                    'ozet': ozet,
-                    'ilgili': ilgili,
-                    'yil': yil,
-                    'periyot': periyot
-                }
-
-                kaplar.append(kap)
-
-        # json formatında dondurur
-        response = app.response_class(
-            response=json.dumps(kaplar),
-            status=200,
-            mimetype='application/json'
-        )
-        return response
-        # return "test test"
+        print("driver.title")
+        return "title: " + driver.title
     finally:
-        #print("sfdsf")
+        print("driver.quit()")
         driver.quit()
