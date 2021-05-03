@@ -23,7 +23,7 @@ def index():
 
         elements = driver.find_elements_by_class_name('w-clearfix.notifications-row')
 
-        for i in range(5):
+        for i in range(2):
             column = elements[i].find_elements_by_class_name('notifications-column')
             if column.__len__() == 11:
                 sayi = column[0].text
