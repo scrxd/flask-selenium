@@ -14,15 +14,13 @@ driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), c
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
     try:
+        kaplar = []
         driver.get('https://www.kap.org.tr/tr/bildirim-sorgu?member=4028e4a1413b7ef401413bc2251e0047')
         time.sleep(1)
         elements = driver.find_elements_by_class_name('w-clearfix.notifications-row')
-
-        kaplar = []
 
         for e in elements:
             column = e.find_elements_by_class_name('notifications-column')
@@ -62,4 +60,5 @@ def index():
         return response
         # return "test test"
     finally:
-        print("sfdsf")
+        #print("sfdsf")
+        driver.quit()
