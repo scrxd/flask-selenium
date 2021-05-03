@@ -79,9 +79,9 @@ def index():
         #return "test test"
         #return json.dumps(kaplar)
 
-        #eee = driver.find_element_by_class_name('notifications-block')
-        #rrr = eee.get_attribute('innerHTML')
-        return driver.page_source
+        elementKaplar = driver.find_element_by_class_name('notifications-block')
+        innerHtml = elementKaplar.get_attribute('innerHTML')
+        return innerHtml
     finally:
         print("sfdsf")
         driver.quit()
