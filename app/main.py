@@ -16,7 +16,8 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     try:
-        #driver.get('https://kartaca.com')
-        return "24333333333333dfghgffghfg"
+        driver.get('https://kartaca.com')
+        return driver.title
+        #return "24333333333333dfghgffghfg"
     finally:
         print("sfdsf")
