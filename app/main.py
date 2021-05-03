@@ -51,20 +51,20 @@ def index():
                 yil = column[8].text
                 periyot = column[9].text
 
-                kap = {
-                    'sayi': sayi,
-                    'tarih': tarih,
-                    'kod': kod,
-                    'sirket': sirket,
-                    'tip': tip,
-                    'konu': konu,
-                    'ozet': ozet,
-                    'ilgili': ilgili,
-                    'yil': yil,
-                    'periyot': periyot
-                }
-
-                kaplar.append(kap)
+                # kap = {
+                #     'sayi': sayi,
+                #     'tarih': tarih,
+                #     'kod': kod,
+                #     'sirket': sirket,
+                #     'tip': tip,
+                #     'konu': konu,
+                #     'ozet': ozet,
+                #     'ilgili': ilgili,
+                #     'yil': yil,
+                #     'periyot': periyot
+                # }
+                #
+                # kaplar.append(kap)
 
         # json formatında dondurur
         # response = app.response_class(
