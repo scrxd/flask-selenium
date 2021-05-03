@@ -37,7 +37,7 @@ def index():
 
         kaplar.append(kap)
 
-        for i in range(50):
+        for i in range(20):
             column = elements[i].find_elements_by_class_name('notifications-column')
             if column.__len__() == 11:
                 sayi = column[0].text
