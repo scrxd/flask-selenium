@@ -14,8 +14,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 	try:
-		driver.get('https://kartaca.com')
-            #browser.get_screenshot_as_file("/tmp/screenshot.png")
-            return(browser.title)
-        finally:
-        	browser.quit()
+		#driver.get('https://kartaca.com')
+        return("browser.title")
+    finally:
+        browser.quit()
