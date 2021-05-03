@@ -19,11 +19,11 @@ def index():
     try:
         kaplar = []
         driver.get('https://www.kap.org.tr/tr/bildirim-sorgu?member=4028e4a1413b7ef401413bc2251e0047')
-        time.sleep(1)
+        time.sleep(0.1)
 
         elements = driver.find_elements_by_class_name('w-clearfix.notifications-row')
 
-        for i in range(2):
+        for i in range(100):
             column = elements[i].find_elements_by_class_name('notifications-column')
             if column.__len__() == 11:
                 sayi = column[0].text
