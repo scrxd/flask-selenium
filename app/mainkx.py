@@ -71,3 +71,4 @@ print(kaplar_json)
 
 time.sleep(0.1)
 driver.close()
+print("bitti")
