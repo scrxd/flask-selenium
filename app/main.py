@@ -10,6 +10,7 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-sh-usage")
 
 driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+driver.set_page_load_timeout(30)
 
 app = Flask(__name__)
 
@@ -79,9 +80,9 @@ def index():
         #return "test test"
         #return json.dumps(kaplar)
 
-        elementKaplar = driver.find_element_by_class_name('notifications-block')
-        innerHtml = elementKaplar.get_attribute('outerHTML')
-        return innerHtml
+        #elementKaplar = driver.find_element_by_class_name('notifications-block')
+        #innerHtml = elementKaplar.get_attribute('outerHTML')
+        #return innerHtml
     finally:
         print("sfdsf")
         driver.quit()
