@@ -10,6 +10,8 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-sh-usage")
 
 driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+driver.set_page_load_timeout(60)
+
 # driver.get('https://www.kap.org.tr/tr/')
 driver.get('https://www.kap.org.tr/tr/bildirim-sorgu?member=4028e4a1413b7ef401413bc2251e0047')
 #driver.get('https://www.kap.org.tr/tr/bildirim-sorgu?member=4028e4a140f2ed7201411682b0cb05c6')

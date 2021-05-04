@@ -11,6 +11,7 @@ chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-sh-usage")
 
 driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+driver.set_page_load_timeout(60)
 
 app = Flask(__name__)
 
